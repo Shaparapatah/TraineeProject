@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">TraineeProject</string>
     <string name="austria_text_view_flag">Austria</string>
+    <string name="poland_text_view_flag">Poland</string>
+    <string name="italy_text_view_flag">Italy</string>
+    <string name="colombia_text_view_flag">Colombia</string>
+    <string name="madagascar_text_view_flag">Madagascar</string>
+    <string name="thailand_text_view_flag">Thailand</string>
+    <string name="denmark_text_view_flag">Denmark</string>
+    <string name="switzerland_text_view_flag">Switzerland</string>
 </resources>

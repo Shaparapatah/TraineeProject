@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_start_austria_container">64dp</dimen>
+    <dimen name="margin_end_austria_container">68dp</dimen>
+    <dimen name="width_dp_for_icon_flag">90dp</dimen>
+    <dimen name="height_dp_for_icon_flag">90dp</dimen>
+    <dimen name="margin_start_switzerland_container">64dp</dimen>
+    <dimen name="text_size_name_flags">25sp</dimen>
+    <dimen name="margin_start_thailand_container">76dp</dimen>
+    <dimen name="margin_start_madagascar_container">16dp</dimen>
+    <dimen name="margin_start_colombia_container">56dp</dimen>
+    <dimen name="margin_start_italy_container">64dp</dimen>
+    <dimen name="margins_start_poland_container">92dp</dimen>
+</resources>
