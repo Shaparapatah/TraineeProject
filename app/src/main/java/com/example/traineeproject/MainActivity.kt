@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         firstCommit()
     }
 
-    fun firstCommit() {
+    private fun firstCommit() {
         print("My first Commit")
     }
 }
