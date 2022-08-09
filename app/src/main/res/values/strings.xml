@@ -8,4 +8,5 @@
     <string name="thailand_text_view_flag">Thailand</string>
     <string name="denmark_text_view_flag">Denmark</string>
     <string name="switzerland_text_view_flag">Switzerland</string>
+    <string name="text_btn">BTN</string>
 </resources>
