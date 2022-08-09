@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun firstCommit() {
-        print("My first Commit")
+        print("First homeWork")
     }
 }
