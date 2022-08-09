@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TraineeProject</string>
+    <string name="austria_text_view_flag">Austria</string>
 </resources>
