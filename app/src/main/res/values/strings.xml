@@ -9,4 +9,5 @@
     <string name="denmark_text_view_flag">Denmark</string>
     <string name="switzerland_text_view_flag">Switzerland</string>
     <string name="text_btn">BTN</string>
+    <string name="text_button">Press</string>
 </resources>

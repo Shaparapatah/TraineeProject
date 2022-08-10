@@ -11,4 +11,11 @@
     <dimen name="margin_start_colombia_container">56dp</dimen>
     <dimen name="margin_start_italy_container">64dp</dimen>
     <dimen name="margins_start_poland_container">92dp</dimen>
+    <dimen name="image_view_width">300dp</dimen>
+    <dimen name="image_view_height">300dp</dimen>
+    <dimen name="margin_top_image_view">50dp</dimen>
+    <dimen name="margin_top_edit_text">50dp</dimen>
+    <dimen name="margin_bottom_edit_text">306dp</dimen>
+    <dimen name="btn_width">100dp</dimen>
+    <dimen name="btn_height">100dp</dimen>
 </resources>
