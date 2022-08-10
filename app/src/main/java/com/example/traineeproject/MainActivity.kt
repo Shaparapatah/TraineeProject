@@ -1,7 +1,6 @@
 package com.example.traineeproject
 
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -11,7 +10,6 @@ import com.example.traineeproject.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private val imageUrl = "https://picsum.photos/id/870/200/300?grayscale&blur=2"
-    private lateinit var editLink: EditText
     private lateinit var binding: ActivityMainBinding
 
 
