@@ -11,14 +11,19 @@ import java.util.*
 
 class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
-    companion object {
-        private const val DEFAULT_WIDTH = 200
-    }
+    private var hourLength = 0f
+    private var minLength = 0f
+    private var secLength = 0f
 
-    private lateinit var mBlackPaint: Paint
+    private var hourWidth = 0f
+    private var minWidth = 0f
+    private var secWidth = 0f
+
+    private lateinit var mainBlack: Paint
     private lateinit var mRedPaint: Paint
-    private lateinit var mCBlackPaintTwo: Paint
-    private lateinit var mTextPaint: Paint
+    private lateinit var secondBlack: Paint
+    private lateinit var textPaint: Paint
+
     private var hour: Int? = null
     private var minute: Int? = null
     private var second: Int? = null
@@ -27,22 +32,41 @@ class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     init {
         initPaints()
+
+//        context.withStyledAttributes(attrs, R.styleable.ClockView) {
+//            mBlackPaint = getColor(R.styleable.ClockView_mBlackPaint, Color.BLACK)
+//            mRedPaint = getColor(R.styleable.ClockView_mBlackPaint, Color.RED)
+//            mCBlackPaintTwo = getColor(R.styleable.ClockView_mBlackPaint, Color.BLACK)
+//            mTextPaint = getColor(R.styleable.ClockView_mBlackPaint, Color.BLACK)
+//
+//            hourLength = getDimension(R.styleable.ClockView_hourLength, 5f)
+//            minLength = getDimension(R.styleable.ClockView_minLength, 5f)
+//            secLength = getDimension(R.styleable.ClockView_secLength, 5f)
+//
+//            hourWidth = getDimension(R.styleable.ClockView_hourWidth, 10f)
+//            minWidth = getDimension(R.styleable.ClockView_minWidth, 10f)
+//            secWidth = getDimension(R.styleable.ClockView_secWidth, 10f)
     }
 
+
     private fun initPaints() {
-        mBlackPaint = Paint()
-        with(mBlackPaint) {
+
+        mainBlack = Paint()
+        with(mainBlack) {
             color = Color.BLACK
             strokeWidth = 5f
             isAntiAlias = true
             style = Paint.Style.STROKE
         }
-        mCBlackPaintTwo = Paint()
-        with(mCBlackPaintTwo) {
+
+        secondBlack = Paint()
+        with(secondBlack) {
             color = Color.BLACK
             isAntiAlias = true
             style = Paint.Style.FILL
         }
+
+
         mRedPaint = Paint()
         with(mRedPaint) {
             color = Color.RED
@@ -50,8 +74,8 @@ class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
             isAntiAlias = true
         }
 
-        mTextPaint = Paint()
-        with(mTextPaint) {
+        textPaint = Paint()
+        with(textPaint) {
             color = Color.BLACK
             textSize = 30f
             isAntiAlias = true
@@ -85,12 +109,12 @@ class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
     }
 
     private fun drawOuterCircle(canvas: Canvas?) {
-        mBlackPaint.strokeWidth = 5f
+        mainBlack.strokeWidth = 5f
         canvas?.drawCircle(
             measuredWidth / 2.toFloat(),
             measuredHeight / 2.toFloat(),
             (measuredWidth / 2 - 5).toFloat(),
-            mBlackPaint
+            mainBlack
         )
     }
 
@@ -99,30 +123,30 @@ class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
             measuredWidth / 2.toFloat(),
             measuredHeight / 2.toFloat(),
             20f,
-            mCBlackPaintTwo
+            mRedPaint
         )
     }
 
     private fun drawHand(canvas: Canvas?) {
         drawSecond(canvas, mRedPaint)
-        mBlackPaint.strokeWidth = 10f
-        drawMinute(canvas, mBlackPaint)
-        mBlackPaint.strokeWidth = 15f
-        drawHour(canvas, mBlackPaint)
+        mainBlack.strokeWidth = 10f
+        drawMinute(canvas, mainBlack)
+        mainBlack.strokeWidth = 15f
+        drawHour(canvas, mainBlack)
     }
 
     private fun drawTimeText(canvas: Canvas?) {
         val textR = (measuredWidth / 2 - 50)
         for (i in 0..11) {
             val startX =
-                (measuredWidth / 2 + textR * kotlin.math.sin(PI / 6 * i) - mTextPaint.measureText(
+                (measuredWidth / 2 + textR * kotlin.math.sin(PI / 6 * i) - textPaint.measureText(
                     textArray[i]
                 ) / 2).toFloat()
             val startY =
-                (measuredHeight / 2 - textR * kotlin.math.cos(PI / 6 * i) + mTextPaint.measureText(
+                (measuredHeight / 2 - textR * kotlin.math.cos(PI / 6 * i) + textPaint.measureText(
                     textArray[i]
                 ) / 2).toFloat()
-            canvas?.drawText(textArray[i], startX, startY, mTextPaint)
+            canvas?.drawText(textArray[i], startX, startY, textPaint)
         }
     }
 
@@ -131,10 +155,10 @@ class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
         canvas?.save()
         for (i in 0..59) {
             if (i % 5 == 0) {
-                mBlackPaint.strokeWidth = 5f
+                mainBlack.strokeWidth = 5f
                 scaleLength = 20f
             } else {
-                mBlackPaint.strokeWidth = 3f
+                mainBlack.strokeWidth = 3f
                 scaleLength = 10f
             }
             canvas?.drawLine(
@@ -142,7 +166,7 @@ class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
                 5f,
                 measuredWidth / 2.toFloat(),
                 (5 + scaleLength),
-                mBlackPaint
+                mainBlack
             )
             canvas?.rotate(
                 360 / 60.toFloat(),
@@ -201,4 +225,9 @@ class ClockView(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
         setMeasuredDimension(result, result)
     }
+
+    companion object {
+        private const val DEFAULT_WIDTH = 200
+    }
+
 }

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ClockView">
-<!--        <attr name="strokeWidth" format="dimension" />-->
-<!--        <attr name="mDefaultWidth" format="dimension" />-->
-<!--        <attr name="mDefaultLength" format="dimension" />-->
-<!--        <attr name="mSpecialWidth" format="dimension" />-->
-<!--        <attr name="mSpecialLength" format="dimension" />-->
-<!--        <attr name="mHWidth" format="dimension" />-->
-<!--        <attr name="mMWidth" format="dimension" />-->
-<!--        <attr name="mSWidth" format="dimension" />-->
+        <attr name="hourLength" format="dimension" />
+        <attr name="minLength" format="dimension" />
+        <attr name="secLength" format="dimension" />
+        <attr name="hourWidth" format="dimension" />
+        <attr name="minWidth" format="dimension" />
+        <attr name="secWidth" format="dimension" />
 
-<!--        <attr name="mBlackPaint" format="color" />-->
-<!--        <attr name="mRedPaint" format="color" />-->
-<!--        <attr name="mCBlackPaintTwo" format="color" />-->
-<!--        <attr name="mTextPaint" format="color" />-->
+
+        <attr name="mBlackPaint" format="color" />
+        <attr name="mRedPaint" format="color" />
+        <attr name="mCBlackPaintTwo" format="color" />
+        <attr name="mTextPaint" format="color" />
     </declare-styleable>
 </resources>
